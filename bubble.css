@@ -1,0 +1,30 @@
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: navy;
+  margin-left: 20px;
+}
+
+#error-message {
+	color: red;
+	font-size: 20px;
+}
+
+span.dot {
+    display: inline-block;
+    margin-left: 20px;
+    width: 35px;
+    height: 35px;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 50%;
+    background-color: white;
+}
+
+span.letter-in-bubble {
+	font-size: 25px;
+	margin: 12px;
+}
