@@ -6,8 +6,49 @@
         <script src="bubbleLetters.js"></script>
     </head>
     <body>
-        <h1>Bubble Letters</h1>
+        <h1>Bubble Letters Maker</h1>
+        <form id="words">
+            <div class="form-line">
+                <button class="submit-btn" type="submit">Make it</button>
+                <button type="reset">Reset</button>    
+            </div>
+            <p>Enter words to be scrambled here:</p>
+            <div class="form-line word-inputs">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="form-line word-inputs">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="form-line word-inputs">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="form-line word-inputs">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="form-line word-inputs">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="form-line">
+                <p>Instructions written here will be displayed on the worksheet:</p>
+                <textarea id="instructions-input">Instructions: Color in the letters from one word from the bank. The remaining letters spell another word from the bank. Write both words on the lines beneath the bubbles.
+                </textarea>
+            </div>
+        </form>
         <p id="error-message"></p>
-        <span id="bubbles-container"></span>
+        <p>Worksheet to print: </p>
+
+        <div class='worksheet'>
+            <p>Name: _______________</p>
+            <p>Date: ________________</p>
+            <h2>Bubble Letters</h2>
+            <div id="instructions-cntr"></div>
+            <div id="word-bank"></div>
+            <div id="bubbles-container"></div>    
+        </div>
     </body>
 </html>

@@ -1,15 +1,93 @@
 body {
   background-color: lightblue;
+  color: black;
+  font-family: sans-serif;
 }
 
-h1 {
-  color: navy;
-  margin-left: 20px;
+h2 {  
+  margin-top: 0px;
+  text-align: center;
 }
 
 #error-message {
-	color: red;
-	font-size: 20px;
+  color: red;
+  font-size: 20px;
+}
+
+div.form-line {
+  margin-top: 20px;
+}
+
+div.worksheet {
+  margin: auto;
+  width: 816px;
+  height: 1056px;
+  background-color: white;
+  padding: 20px;
+}
+
+#word-bank {
+  visibility: hidden;
+  display: inline-block;
+  margin-bottom: 20px;
+  width: 95%;
+  padding: 20px;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+}
+
+.bank-word {
+  float: left;
+  margin: 10px 20px;
+}
+
+div.bubbles-row {
+  margin-top: 20px;
+}
+
+div.lines-row {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+span.blank-line {
+  display: inline-block;
+  margin-left: 40px;
+  margin-top: 20px;
+  width: 250px;
+  border-bottom: 1px solid black;
+}
+
+button {
+  margin-left: 20px;
+  border: 0px solid gray;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+button.submit-btn {
+  background-color: #12ab4d;
+  color: white;
+}
+
+input {
+  margin-left: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+textarea#instructions-input {
+  margin-left: 20px;
+  height: 100px;
+  width: 460px;
+  border: 1px solid black;
+  border-radius: 5px;
+  word-wrap: wrap;
 }
 
 span.dot {
@@ -25,6 +103,9 @@ span.dot {
 }
 
 span.letter-in-bubble {
-	font-size: 25px;
-	margin: 12px;
+  display: inline-block;
+  width: 100%;
+  font-size: 25px;
+  text-align: center;
+  margin: auto;
 }
