@@ -4,19 +4,54 @@ body {
   font-family: sans-serif;
 }
 
-h2 {  
+h2, h3 {  
   margin-top: 0px;
   text-align: center;
 }
 
-#error-message {
+#error-message, .error-message {
+  display: inline-block;
+  margin: 0px 20px;
   color: red;
   font-size: 20px;
+  width: 400px;
 }
 
 div.form-line {
   margin-top: 20px;
 }
+
+button {
+  margin-left: 20px;
+  border: 0px solid gray;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+button.submit-btn {
+  background-color: #12ab4d;
+  color: white;
+}
+
+input {
+  margin-left: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+textarea#instructions-input {
+  margin-left: 20px;
+  height: 100px;
+  width: 460px;
+  border: 1px solid black;
+  border-radius: 5px;
+  word-wrap: wrap;
+}
+
 
 div.worksheet {
   margin: auto;
@@ -59,47 +94,20 @@ span.blank-line {
   border-bottom: 1px solid black;
 }
 
-button {
-  margin-left: 20px;
-  border: 0px solid gray;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 16px;
-  text-align: center;
-}
-
-button.submit-btn {
-  background-color: #12ab4d;
-  color: white;
-}
-
-input {
-  margin-left: 20px;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 5px;
-  font-size: 20px;
-}
-
-textarea#instructions-input {
-  margin-left: 20px;
-  height: 100px;
-  width: 460px;
-  border: 1px solid black;
-  border-radius: 5px;
-  word-wrap: wrap;
-}
-
 span.dot {
-    display: inline-block;
-    margin-left: 20px;
-    width: 35px;
-    height: 35px;
-    border: 1px;
-    border-style: solid;
-    border-color: black;
-    border-radius: 50%;
-    background-color: white;
+  display: inline-block;
+  margin-left: 20px;
+  width: 35px;
+  height: 35px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: white;
+}
+
+span.tiny-dot {
+  margin-left: 5px;
+  width: 25px;
+  height: 25px;
 }
 
 span.letter-in-bubble {
@@ -108,4 +116,10 @@ span.letter-in-bubble {
   font-size: 25px;
   text-align: center;
   margin: auto;
+  margin-top: 2px;
+}
+
+span.tiny-letter {
+  margin-top: 3px;
+  font-size: 15px;
 }
