@@ -1,18 +1,19 @@
 
-function makeBubbleSpan(letter, isTiny) {
+function makeBubbleSpan(letter, size) {
   // takes letter and returns span
   if (!letter.match(/[a-z 'ñáéíóúA-ZÁÉÍÓÚ]/i)) {
     console.log('error: a-z');
     return;
   }
-  if (isTiny) {
-    return("<span class='dot tiny-dot'><span class='letter-in-bubble tiny-letter'>"+ letter +"</span></span>");
-  } else {
-    return("<span class='dot'><span class='letter-in-bubble'>"+ letter +"</span></span>");  
-  }
+  return("<span class='dot " + size + "'><span class='letter-in-bubble " + size + "'>" + letter +"</span></span>");
+  // if (size == 'small') {
+  //   return("<span class='dot tiny-dot'><span class='letter-in-bubble tiny-letter'>"+ letter +"</span></span>");
+  // } else {
+  //   return("<span class='dot'><span class='letter-in-bubble'>"+ letter +"</span></span>");  
+  // }
 };
 
-function makeWordIntoSpans(word, isTiny, hasTwoLines){
+function makeWordIntoSpans(word, size, hasTwoLines){
   // Takes a word and creates bubble spans plus blank lines
     var allBubbleSpans = '';
     var blanksDiv = '<div class="lines-row">';
@@ -24,7 +25,7 @@ function makeWordIntoSpans(word, isTiny, hasTwoLines){
       blankLines += blankLines
     }
     for (let i = 0; i < word.length; i++) {
-      span = makeBubbleSpan(word[i], isTiny);
+      span = makeBubbleSpan(word[i], size);
       if (!span) {
         errorMessage = 'must use letters only'
         document.getElementById("error-message").innerHTML = 'Error: ' + errorMessage;
@@ -79,31 +80,33 @@ function makeInstructions(instructionsText) {
 function submitHandler() {
   var formLinesList = document.getElementsByClassName('word-inputs');
   var instructionsText = document.getElementById('instructions-input').value;
-  let formLine, word1, word2, errorMessage, hasTwoLines, isTiny, letters, shuffledLetters;
+  let formLine, word1, word2, errorMessage, hasTwoLines, size, letters, shuffledLetters;
   var wordList = [];
   document.getElementById("bubbles-container").innerHTML = "";
   clearErrors();
   // go through each form line
   for (i = 0; i < formLinesList.length; i++) {
-    isTiny = false;
+    size = 'large';
     formLine = formLinesList[i];
     // go through both inputs in that form line
     word1 = formLine.children[0].value;
     word2 = formLine.children[1].value;
     // check for character limit
-    if (word1.length + word2.length > 26) {
-      errorMessage = "limit 26 letters per line"
+    if (word1.length + word2.length > 23) {
+      errorMessage = "limit 23 letters per line"
       document.getElementById("error-message-" + i).innerHTML = "Error: " + errorMessage;
         return;
     // make the bubbles small if there are more than 14 letters
+    } else if (word1.length + word2.length > 19) {
+      size = 'small';
     } else if (word1.length + word2.length > 14) {
-      isTiny = true;
+      size = 'medium';
     }
     // take a word or pair of words
     if (word1.length || word2.length) {
       // add them to the word bank
       if (word1) {
-        wordList.push(word1);  
+        wordList.push(word1);
       }
       if (word2) {
         wordList.push(word2);
@@ -114,7 +117,7 @@ function submitHandler() {
       letters = word1.concat(word2).split('');
       shuffledLetters = letters.sort((a, b) => 0.5 - Math.random());
       hasTwoLines = (word1.length && word2.length);
-      makeWordIntoSpans(shuffledLetters, isTiny, hasTwoLines);
+      makeWordIntoSpans(shuffledLetters, size, hasTwoLines);
     }
   };
   if (wordList.length) {
