@@ -53,7 +53,6 @@ function resetHandler() {
     inputs[i].value = '';
   };
   document.getElementById('instructions-input').value ="";
-  document.getElementById("word-bank").style.visibility = 'hidden';
   document.getElementById('instructions-cntr').innerHTML ="";
   document.getElementById("bubbles-container").innerHTML = "";
   clearErrors();
@@ -68,7 +67,6 @@ function makeWordBank(wordList) {
     wordListSpans += "<span class='bank-word'>" + wordList[i] + "</span>";
   };
   wordBankCtr.innerHTML = '<h3>Word Bank</h3><div class="word-spans">' + wordListSpans + '</div>';
-  wordBankCtr.style.visibility = "visible";
 };
 
 function makeInstructions(instructionsText) {
@@ -132,7 +130,7 @@ function downloadPdfHandler() {
     margin:       0,
     filename:     'bubble letters.pdf',
     image:        { type: 'jpeg', quality: 0.98 },
-    html2canvas:  { scale: 1, scrollY: 0 },
+    html2canvas:  { scale: 1, scrollY: 0, scrollX: 0 },
     jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait'}
   };
   html2pdf().set(opt).from(element).save();
