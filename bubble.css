@@ -53,11 +53,10 @@ textarea#instructions-input {
   word-wrap: wrap;
 }
 
-
 div#worksheet {
   margin: auto;
-  width: 816px;
-  height: 1056px;
+  width: 716px;
+  height: 956px;
   background-color: white;
   padding: 20px;
 }

@@ -125,7 +125,14 @@ function submitHandler() {
 
 function downloadPdfHandler() {
   var element = document.getElementById('worksheet');
-  html2pdf(element);
+  var opt = {
+    margin:       0,
+    filename:     'bubble letters.pdf',
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  { scale: 1, scrollY: 0 },
+    jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait'}
+  };
+  html2pdf().set(opt).from(element).save();
 }
 
 window.addEventListener("load", (event) => {
