@@ -2,6 +2,7 @@ body {
   background-color: lightblue;
   color: black;
   font-family: sans-serif;
+  padding-left: 20px;
 }
 
 h2, h3 {  
@@ -53,7 +54,7 @@ textarea#instructions-input {
 }
 
 
-div.worksheet {
+div#worksheet {
   margin: auto;
   width: 816px;
   height: 1056px;

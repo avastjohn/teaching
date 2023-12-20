@@ -85,6 +85,7 @@ function submitHandler() {
   clearErrors();
   // go through each form line
   for (i = 0; i < formLinesList.length; i++) {
+    isTiny = false;
     formLine = formLinesList[i];
     // go through both inputs in that form line
     word1 = formLine.children[0].value;
@@ -122,6 +123,11 @@ function submitHandler() {
   makeInstructions(instructionsText);
 };
 
+function downloadPdfHandler() {
+  var element = document.getElementById('worksheet');
+  html2pdf(element);
+}
+
 window.addEventListener("load", (event) => {
   const form = document.getElementById("words");
   form.addEventListener("submit", onSubmit);
@@ -137,3 +143,7 @@ function onReset(event) {
   event.preventDefault();
   resetHandler();
 };
+
+function onClickDownload(event) {
+  downloadPdfHandler();
+}

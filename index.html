@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="bubble.css">
+        <script src="html2pdf.bundle.min.js"></script>
         <script src="bubbleLetters.js"></script>
     </head>
     <body>
@@ -46,8 +47,8 @@
         </form>
         <p id="error-message"></p>
         <p>Worksheet to print: </p>
-
-        <div class='worksheet'>
+        <button type="button" id="dowload" onclick="onClickDownload()">Download PDF</button>
+        <div id='worksheet'>
             <p>Name: _______________</p>
             <p>Date: ________________</p>
             <h2>Bubble Letters</h2>
